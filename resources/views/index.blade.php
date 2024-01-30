@@ -73,7 +73,7 @@
                     </table>
                 </div>
 
-                {{-- --------------------Modal Start CREATE--------------------- --}}
+                {{-- --------------------Modal Start CREATE- Table----------------------}}
 
                 <div class="modal fade" id="adicionarJogoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
