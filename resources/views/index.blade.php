@@ -24,7 +24,6 @@
                                     <a style="border-radius: 8px;" class="btn btn-success" data-toggle="modal" data-target="#adicionarJogoModal">
                                         <i class="material-icons">&#xE147;</i>
                                         <span>Adicionar</span>
-                                        <H1>Tiago</H1>
                                     </a>
                                 </div>
                             </div>
