@@ -14,7 +14,6 @@
         </div>
     </div>
     <hr>
-    <!----Somente um teste----->
     <form action="{{ route('jogos-store') }}" method="POST"> {{-----Metodo Salvar-----}}
         @csrf
         <div class="form-group">
