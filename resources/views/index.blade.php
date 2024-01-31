@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
                                 <div class="container">
-                                    {{-- Botão para abrir o modal --}}
+                                    {{-- Botão para abrir form create---}}
                                     <a style="border-radius: 8px;" class="btn btn-success" data-toggle="modal" data-target="#adicionarJogoModal">
                                         <i class="material-icons">&#xE147;</i>
                                         <span>Adicionar</span>
