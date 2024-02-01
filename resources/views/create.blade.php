@@ -7,7 +7,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-sm-10">
-            <h1>Adicionar Jogo</h1>
+            <h1>Adicionar Novo Jogo</h1>
         </div>
         <div class="col-sm-2">
             <a href="{{ route('jogos-index') }}" class="btn btn-secondary">Voltar</a>
