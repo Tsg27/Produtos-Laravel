@@ -23,7 +23,7 @@
                                     {{-- Botão para abrir form create---}}
                                     <a style="border-radius: 8px;" class="btn btn-success" data-toggle="modal" data-target="#adicionarJogoModal">
                                         <i class="material-icons">&#xE147;</i>
-                                        <span>Cadastrar</span>
+                                        <span>Adicionar</span>
                                     </a>
                                 </div>
                             </div>
