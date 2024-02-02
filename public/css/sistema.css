@@ -1,17 +1,16 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-
-
+.navbar-light {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 .modal-title {
     font-weight: 400;
     color: #000000;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     display: inline-block;
 }
-
-
 
 .table-wrapper {
     background-color: #fff;
@@ -23,23 +22,20 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-#submitAdicionar{
+#submitAdicionar {
     margin-left: 65px;
 }
 
-
 .table-wrapper table {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .table-wrapper td {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-
 .table-title {
-    background: gray;
+    background: rgb(101, 101, 101);
     color: #fff;
     padding: 10px 30px;
     margin: -20px -25px 10px;
@@ -128,11 +124,11 @@ table.teble td a:hover {
 }
 
 .edit {
-    color: #FFc107;
+    color: #ffc107;
 }
 
 .delete {
-    color: #F44336;
+    color: #f44336;
 }
 
 table.table td i {
@@ -162,8 +158,6 @@ table.table .avatar {
     text-align: center;
     padding: 0 6px;
 }
-
-
 
 .modal .modal-dialog {
     max-width: 400px;
@@ -217,7 +211,6 @@ footer {
     padding: 10px 30px;
     position: relative;
     width: 100%;
-
 }
 
 #sidebar.show-nav,
@@ -259,7 +252,5 @@ footer {
         background-color: rgba(0, 0, 0, 0.5);
     }
 }
-
-
 
 /*--------------*/
