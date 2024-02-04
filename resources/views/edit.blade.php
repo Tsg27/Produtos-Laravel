@@ -9,28 +9,28 @@
     <title>Editar Produto</title>
 </head>
 <body>
-   <form action="{{ route('jogos-update', ['id'=>$jogos->id]) }}" method="POST">
+   <form action="{{ route('produtos-update', ['id'=>$produtos->id]) }}" method="POST">
       @csrf
       @method('PUT')
       <h2>Editar Produto</h2>
       <div class="form-group">
          <label for="nome">Nome do produto:</label>
-         <input type="text" name="nome" id="nome" value="{{ $jogos->nome }}">
+         <input type="text" name="nome" id="nome" value="{{ $produtos->nome }}">
       </div>
       <div class="form-group">
          <label for="categoria">Categoria</label>
-         <input type="text" name="categoria" id="categoria" value="{{ $jogos->categoria }}">
+         <input type="text" name="categoria" id="categoria" value="{{ $produtos->categoria }}">
       </div>
       <div class="form-group">
-         <label for="ano_fabricacao">Ano de fabricação:</label>
-         <input type="text" name="ano_fabricacao" id="ano_fabricacao" value="{{ $jogos->ano_fabricacao }}" maxlength="4">
+         <label for="validade">Validade:</label>
+         <input type="text" name="validade" id="validade" value="{{ $produtos->validade }}" maxlength="7">
       </div>
       <div class="form-group">
          <label for="valor">valor:</label>
-         <input type="text" name="valor" id="valor" value="{{ $jogos->valor }}">
+         <input type="text" name="valor" id="valor" value="{{ $produtos->valor }}">
       </div>
       <div class="modal-footer">
-         <a href="{{ route('jogos-index') }}"><button type="submit" class="btn btn-secondary">Voltar</button></a>
+         <a href="{{ route('produtos-index') }}"><button type="submit" class="btn btn-secondary">Voltar</button></a>
          <button type="submit" class="btn btn-success">Atualizar</button>
       </div>
    </form>

@@ -12,7 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
-
 <body>
     @yield('content')
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/01/2024 às 22:23
+-- Tempo de geração: 04/02/2024 às 14:20
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `db_jogos`
+-- Banco de dados: `db_produtos`
 --
 
 -- --------------------------------------------------------
@@ -36,31 +36,6 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `jogos`
---
-
-CREATE TABLE `jogos` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nome` varchar(60) NOT NULL,
-  `categoria` varchar(60) NOT NULL,
-  `ano_criacao` year(4) NOT NULL,
-  `valor` double(8,2) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Despejando dados para a tabela `jogos`
---
-
-INSERT INTO `jogos` (`id`, `nome`, `categoria`, `ano_criacao`, `valor`, `created_at`, `updated_at`) VALUES
-(4, 'Bomba patch', 'Futebol', '1992', 90.00, '2024-01-21 07:08:34', '2024-01-21 07:37:52'),
-(5, 'Call of duty', 'Ação', '1992', 101.00, '2024-01-21 07:38:32', '2024-01-21 07:38:40'),
-(6, 'GTA-6', 'Ação', '2023', 200.00, '2024-01-22 00:18:36', '2024-01-22 00:18:36');
 
 -- --------------------------------------------------------
 
@@ -83,7 +58,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2024_01_19_231953_create_jogos_table', 1);
+(5, '2024_02_04_124045_create_produtos_table', 1);
 
 -- --------------------------------------------------------
 
@@ -119,6 +94,30 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `produtos`
+--
+
+CREATE TABLE `produtos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `categoria` varchar(60) NOT NULL,
+  `validade` varchar(255) NOT NULL,
+  `valor` double(8,2) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id`, `nome`, `categoria`, `validade`, `valor`, `created_at`, `updated_at`) VALUES
+(2, 'Arroz', 'Alimentos', '09/2024', 24.00, '2024-02-04 16:18:54', '2024-02-04 16:18:54'),
+(3, 'Macarrão', 'Alimentos', '09/2024', 16.00, '2024-02-04 16:19:09', '2024-02-04 16:19:09');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `users`
 --
 
@@ -145,12 +144,6 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Índices de tabela `jogos`
---
-ALTER TABLE `jogos`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Índices de tabela `migrations`
 --
 ALTER TABLE `migrations`
@@ -171,6 +164,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Índices de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `users`
 --
 ALTER TABLE `users`
@@ -188,12 +187,6 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `jogos`
---
-ALTER TABLE `jogos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
@@ -204,6 +197,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `produtos`
+--
+ALTER TABLE `produtos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `users`

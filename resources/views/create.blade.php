@@ -1,4 +1,4 @@
-@extends('layouts.modelo')
+@extends('layouts.main')
 
 @section('title','Cadastro')
 
@@ -10,11 +10,11 @@
             <h1>Adicionar Jogo</h1>
         </div>
         <div class="col-sm-2">
-            <a href="{{ route('jogos-index') }}" class="btn btn-secondary">Voltar</a>
+            <a href="{{ route('produtos-index') }}" class="btn btn-secondary">Voltar</a>
         </div>
     </div>
     <hr>
-    <form action="{{ route('jogos-store') }}" method="POST"> {{-----Metodo Salvar-----}}
+    <form action="{{ route('produtos-store') }}" method="POST"> {{-----Metodo Salvar-----}}
         @csrf
         <div class="form-group">
             <div class="form-group">
@@ -28,8 +28,8 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="ano_criacao">Ano de Criação:</label>
-                <input type="text" name="ano_criacao" id="ano_criacao" class="form-control" maxlength="4" placeholder="Digite o ano..." required>
+                <label for="validade">Validade</label>
+                <input type="text" name="validade" id="validade" class="form-control" maxlength="4" placeholder="Digite o ano..." required>
             </div>
             <br>
             <div class="form-group">

@@ -1,4 +1,4 @@
-@extends('layouts.modelo')
+@extends('layouts.main')
 
 @section('title', 'Lista de Produtos')
 
@@ -36,31 +36,31 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">Nome do Produto</th>
                                 <th scope="col">Categoria</th>
-                                <th scope="col">Ano de Fabricação</th>
+                                <th scope="col">Validade</th>
                                 <th scope="col">Valor</th>
                                 <th scope="col">Ação</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($jogos as $jogo)
+                            @foreach ($produtos as $produto)
                             <tr>
-                                <th>{{ $jogo->id }}</th>
-                                <th>{{ $jogo->nome }}</th>
-                                <th>{{ $jogo->categoria }}</th>
-                                <th>{{ $jogo->ano_fabricacao }}</th>
-                                <th>{{ $jogo->valor }}</th>
+                                <th>{{ $produto->id }}</th>
+                                <th>{{ $produto->nome }}</th>
+                                <th>{{ $produto->categoria }}</th>
+                                <th>{{ $produto->validade }}</th>
+                                <th>{{ $produto->valor }}</th>
                                 <th class="d-flex">
                                     {{-- -Button Editar- --}}
-                                    <a href="{{ route('jogos-edit', ['id' => $jogo->id]) }}" class="btn btn-primary me-2">
+                                    <a href="{{ route('produtos-edit', ['id' => $produto->id]) }}" class="btn btn-primary me-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                             <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                             <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                         </svg>
                                     </a>
-                                    <form id="formExcluir{{$jogo->id}}" action="{{ route('jogos-destroy',['id'=>$jogo->id])}}" method="POST">
+                                    <form id="formExcluir{{$produto->id}}" action="{{ route('produtos-destroy',['id'=>$produto->id])}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button type="submit" class="btn btn-danger" onclick="confirmarExclusao(event, {{$jogo->id}})"> {{---Button Deletar---}}
+                                        <button type="submit" class="btn btn-danger" onclick="confirmarExclusao(event, {{$produto->id}})"> {{---Button Deletar---}}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
                                                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
@@ -86,23 +86,23 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ route('jogos-store') }}" method="POST">
+                                <form action="{{ route('produtos-store') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label for="nome">Nome do produto:</label>
-                                        <input type="text" name="nome" id="nome" class="form-control" required>
+                                        <input type="text" name="nome" id="nome" class="form-control" placeholder="Informe nome do produto" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="categoria">Categoria:</label>
-                                        <input type="text" name="categoria" id="categoria" class="form-control" required>
+                                        <input type="text" name="categoria" id="categoria" class="form-control" placeholder="Informe categoria" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="ano_criacao">Ano de fabricação:</label>
-                                        <input type="text" name="ano_fabricacao" id="ano_fabricacao" class="form-control" maxlength="4" required>
+                                        <label for="validade">Validade:</label>
+                                        <input type="text" name="validade" id="validade" class="form-control" maxlength="7" placeholder="mm/aaaa" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="valor">Valor:</label>
-                                        <input type="number" name="valor" id="valor" class="form-control" required>
+                                        <input type="number" name="valor" id="valor" class="form-control" placeholder=" Informe valor" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" id="submitCancelar" data-dismiss="modal">Cancelar</button>

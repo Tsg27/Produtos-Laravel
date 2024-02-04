@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Jogo;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class MyController extends Controller
@@ -10,29 +10,29 @@ class MyController extends Controller
 
     public function index()
     {
-        $jogos = Jogo::orderBy('created_at', 'desc')->get();
-        return view('index', ['jogos' => $jogos]);
+        $produtos = Produto::orderBy('created_at', 'desc')->get();
+        return view('index', ['produtos' => $produtos]);
     }
 
 
 
     public function store(Request $request)
     {
-        Jogo::create($request->all());
-        return redirect()->route('jogos-index');
+        Produto::create($request->all());
+        return redirect()->route('produtos-index');
     }
 
 
 
     public function edit($id)
     {
-        $jogos = Jogo::where('id', $id)->first();
-        if (!empty($jogos)) {
+        $produtos = Produto::where('id', $id)->first();
+        if (!empty($produtos)) {
             //Redirecionar para form edit
-            return view('edit', ['jogos' => $jogos]);
+            return view('edit', ['produtos' => $produtos]);
         } else {
             //Redirecionar para index caso id não exista
-            return redirect()->route('jogos-index');
+            return redirect()->route('produtos-index');
         }
     }
 
@@ -43,18 +43,18 @@ class MyController extends Controller
         $data = [
             'nome' => $request->nome,
             'categoria' => $request->categoria,
-            'ano_fabricacao' => $request->ano_fabricacao,
+            'validade' => $request->validade,
             'valor' => $request->valor,
         ];
-        Jogo::where('id', $id)->update($data);
-        return redirect()->route('jogos-index');
+        Produto::where('id', $id)->update($data);
+        return redirect()->route('produtos-index');
     }
 
 
 
     public function destroy($id)
     {
-        Jogo::where('id', $id)->delete();
-        return redirect()->route('jogos-index');
+        Produto::where('id', $id)->delete();
+        return redirect()->route('produtos-index');
     }
 }
