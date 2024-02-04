@@ -5,13 +5,13 @@ use App\Http\Controllers\MyController;
 
 
 
-//-------------Config rota ligada MyControoler------------------->
+//-------------Config rota->MyControoler------------------->
 
 Route::get('/', [MyController::class, 'index'])->name('jogos-index');
 //Route::get('/create', [MyController::class,'create'])->name('jogos-create');
 
 
-//-------------Config CRUD ligada MyControoler------------------->
+//-------------Config CRUD->CRUD->MyControoler------------------->
 Route::post('/', [MyController::class, 'store'])->name('jogos-store'); //-----Salvar
 
 Route::get('/{id}/edit', [MyController::class, 'edit'])->where('id', '[0-9]+')->name('jogos-edit'); //-----Editar
