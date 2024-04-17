@@ -23,7 +23,6 @@ class MyController extends Controller
     }
 
 
-
     public function edit($id)
     {
         $produtos = Produto::where('id', $id)->first();

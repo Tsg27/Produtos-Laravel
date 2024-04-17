@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/02/2024 às 14:20
+-- Tempo de geração: 16/04/2024 às 20:17
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `db_produtos`
+-- Banco de dados: `laravel-produtos`
 --
 
 -- --------------------------------------------------------
@@ -58,7 +58,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2024_02_04_124045_create_produtos_table', 1);
+(5, '2024_04_15_182506_create_produtos_table', 1);
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,7 @@ CREATE TABLE `produtos` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nome` varchar(60) NOT NULL,
   `categoria` varchar(60) NOT NULL,
-  `validade` varchar(255) NOT NULL,
+  `validade` varchar(7) NOT NULL,
   `valor` double(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -112,8 +112,8 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `categoria`, `validade`, `valor`, `created_at`, `updated_at`) VALUES
-(2, 'Arroz', 'Alimentos', '09/2024', 24.00, '2024-02-04 16:18:54', '2024-02-04 16:18:54'),
-(3, 'Macarrão', 'Alimentos', '09/2024', 16.00, '2024-02-04 16:19:09', '2024-02-04 16:19:09');
+(1, 'Arroz', 'Alimentos', '09/2024', 35.00, '2024-04-15 21:29:19', '2024-04-15 21:29:19'),
+(2, 'Macarrão', 'Alimentos', '09/2024', 5.00, '2024-04-15 21:29:47', '2024-04-16 19:22:35');
 
 -- --------------------------------------------------------
 
@@ -131,6 +131,13 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(3, 'Tiago', 'tsgo.soares@gmail.com', NULL, '$2y$12$SEvSU51P79jgo0lDT8saoO67HiBVAAKUaTOfN.CXhumZeIysIHKKS', NULL, '2024-04-16 20:41:12', '2024-04-16 20:41:12');
 
 --
 -- Índices para tabelas despejadas
@@ -202,13 +209,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
