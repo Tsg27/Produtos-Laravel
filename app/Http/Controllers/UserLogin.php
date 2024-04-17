@@ -38,8 +38,8 @@ class UserLogin extends Controller
 
     public function logout(Request $request)
     {
-        $request->session()->flush(); // Limpa toda a sessão
-        $request->session()->forget(''); // Remove a chave específica 'user' da sessão
+        $request->session()->flush(); 
+        $request->session()->forget(''); 
         return redirect('/');
     }
 }
