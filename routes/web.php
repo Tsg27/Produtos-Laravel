@@ -1,36 +1,46 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MyController;
-use App\Http\Controllers\UserLogin;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Controller;
 
 
 
 
-//-------------Config rota login------------------->
-Route::get('/', [UserLogin::class, 'login'])->name('login-page');
-Route::post('/auth', [UserLogin::class, 'auth'])->name('auth-user');
-Route::get('logout', [UserLogin::class, 'logout'])->name('logout');
+//-------------Config rota Home------------------->
+Route::get('/', [Controller::class, 'home'])->name('home');
+
+
+//-------------Config rota LoginController------------------->
+Route::get('/login', [LoginController::class, 'login'])->name('login');    
+Route::post('/auth', [LoginController::class, 'auth'])->name('auth-user');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
+// Grupo de rotas protegidas pelo middleware de autenticação
+Route::middleware(['auth', 'auth.session'])->group(function () {
+    
 
+    Route::get('/index', [ProdutoController::class, 'index'])->name('index');
 
-//-------------Config rota Produto-------------------->
-Route::get('/index', [MyController::class, 'index'])->name('produtos-index');
-Route::get('/create', [MyController::class, 'create'])->name('produtos-create');
+    //-----Create
+    Route::get('/create', [ProdutoController::class, 'create'])->name('produtos-create');
 
+    //-----Salvar
+    Route::post('/index', [ProdutoController::class, 'store'])->name('produtos-store');
 
+    //-----Editar
+    Route::get('/{id}/edit', [ProdutoController::class, 'edit'])->where('id', '[0-9]+')->name('produtos-edit');
 
-//-------------Config CRUD Produto-------------------->
-//-----Salvar
-Route::post('/', [MyController::class, 'store'])->name('produtos-store');
-//-----Editar
-Route::get('/{id}/edit', [MyController::class, 'edit'])->where('id', '[0-9]+')->name('produtos-edit');
-//-----Update
-Route::put('/{id}', [MyController::class, 'update'])->where('id', '[0-9]+')->name('produtos-update');
-//-----Delete
-Route::delete('/{id}', [MyController::class, 'destroy'])->where('id', '[0-9]+')->name('produtos-destroy');
+    //-----Update
+    Route::put('/{id}', [ProdutoController::class, 'update'])->where('id', '[0-9]+')->name('produtos-update');
+
+    //-----Deletar
+    Route::delete('/{id}', [ProdutoController::class, 'destroy'])->where('id', '[0-9]+')->name('produtos-destroy');
+});
+
 
 
 //----------Tratar erro de página não encontrada com URL amigavél------------>

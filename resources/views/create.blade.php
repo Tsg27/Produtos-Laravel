@@ -14,7 +14,7 @@
         </div>
     </div>
     <hr>
-    <form action="{{ route('produtos-store') }}" method="POST"> {{-----Metodo Salvar-----}}
+    <form action="{{ route('store') }}" method="POST"> {{-----Metodo Salvar-----}}
         @csrf
         <div class="form-group">
             <div class="form-group">

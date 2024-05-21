@@ -2,28 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produto;
 use Illuminate\Http\Request;
+use App\Models\Produto; 
 
-class MyController extends Controller
+class ProdutoController extends Controller
 {
 
+    /**
+      * Exiba uma listagem do recurso.
+      */
     public function index()
     {
         $produtos = Produto::orderBy('created_at', 'desc')->get();
-        return view('index', ['produtos' => $produtos]);
+        return view('/index', ['produtos' => $produtos]);
+
     }
 
-
-
+   /**
+      * Armazene um recurso recém-criado no armazenamento.
+      */
     public function store(Request $request)
     {
         Produto::create($request->all());
-        return redirect()->route('produtos-index');
+        return redirect()->route('index');
+
     }
 
 
-    public function edit($id)
+    /**
+      * Mostre o formulário para edição do recurso especificado.
+      */
+    public function edit(string $id)
     {
         $produtos = Produto::where('id', $id)->first();
         if (!empty($produtos)) {
@@ -31,12 +40,15 @@ class MyController extends Controller
             return view('edit', ['produtos' => $produtos]);
         } else {
             //Redirecionar para index caso id não exista
-            return redirect()->route('produtos-index');
+            return redirect()->route('index');
         }
+
     }
 
 
-
+   /**
+      * Atualize o recurso especificado no armazenamento.
+      */
     public function update(Request $request, $id)
     {
         $data = [
@@ -46,14 +58,18 @@ class MyController extends Controller
             'valor' => $request->valor,
         ];
         Produto::where('id', $id)->update($data);
-        return redirect()->route('produtos-index');
+        return redirect()->route('index');
+
     }
 
 
-
+    /**
+      * Remova o recurso especificado do armazenamento.
+      */
     public function destroy($id)
     {
         Produto::where('id', $id)->delete();
-        return redirect()->route('produtos-index');
+        return redirect()->route('index');
+
     }
 }
