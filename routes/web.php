@@ -6,8 +6,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Controller;
 
 
-
-
 //-------------Config rota Home------------------->
 Route::get('/', [Controller::class, 'home'])->name('home');
 
@@ -18,11 +16,10 @@ Route::post('/auth', [LoginController::class, 'auth'])->name('auth-user');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-
 // Grupo de rotas protegidas pelo middleware de autenticação
 Route::middleware(['auth', 'auth.session'])->group(function () {
     
-
+    //-----Main
     Route::get('/index', [ProdutoController::class, 'index'])->name('index');
 
     //-----Create
