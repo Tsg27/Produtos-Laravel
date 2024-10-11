@@ -18,8 +18,9 @@
     <nav class="navbar navbar-light bg-light">
         <form action="{{ route('logout') }}" method="post" style="margin-left: 96%;">
             @csrf
-            <button type="submit" style="border: none; background: none; cursor: pointer;">
-                <span class="material-icons" style="color: #000; font-size: 24px;">logout</span>
+            <button type="submit" class="logout-button">
+                <span class="material-icons logout-icon">logout</span>
+                <span class="logout-text">Sair</span>
             </button>
         </form>
     </nav>
@@ -30,5 +31,4 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="/js/sweetalert.js"></script>
-
 </html>

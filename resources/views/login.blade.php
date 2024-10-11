@@ -25,10 +25,10 @@
                 <div class="form-box">
                     <h2 class="text-login">Login</h2>
                     <div class="input-box">
-                        <input type="email" name="email" placeholder="Endereço de e-mail" maxlength="40">
+                        <input type="email" name="email" placeholder="Endereço de e-mail" maxlength="100">
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" id="password" class="form__input-text" placeholder="Senha" maxlength="40">
+                        <input type="password" name="password" id="password" class="form__input-text" placeholder="Senha" maxlength="128">
                         <i class="form__input-icon fas fa-eye" data-password-eye></i>
                     </div>
                     @if ($errors->any())
