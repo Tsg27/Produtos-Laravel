@@ -34,7 +34,7 @@
         <p>
         Oferecemos os melhores serviços de desenvolvimento de sistemas web para grandes e pequenas empresas. 
         Transforme suas ideias em soluções inovadoras e eficientes com nossa expertise. 
-        Desbloqueie um mundo de possibilidades infinitas e impulsione o futuro digital da sua empresa conosco.
+        Desbloqueie um mundo de possibilidades infinitas e impulsione o futuro digital da sua empresa conosco!.
         </p>
       </div>
       <div class="img">
