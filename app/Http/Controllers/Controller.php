@@ -15,7 +15,7 @@ class Controller extends BaseController
       * Homepage Main
       */
     public function home(){
-        return view('home');
+        return view('/home');
 
     }
 }

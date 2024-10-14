@@ -6,7 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Controller;
 
 
-//-------------Config rota Home------------------->
+//-------------Config pagina Home------------------->
 Route::get('/', [Controller::class, 'home'])->name('home');
 
 
