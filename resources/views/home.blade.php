@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon"/>
     <title>Home | WebDev</title>
     <link rel="stylesheet" href="/css/home.css">
   </head>
@@ -30,15 +31,13 @@
     </header>
     <section class="hero-section">
       <div class="hero">
-        <h2>Desenvolvimento Web</h2>
+        <h2>Fábrica de Software​</h2>
         <p>
-        Oferecemos os melhores serviços de desenvolvimento de sistemas web para grandes e pequenas empresas. 
-        Transforme suas ideias em soluções inovadoras e eficientes com nossa expertise. 
-        Desbloqueie um mundo de possibilidades infinitas e impulsione o futuro digital da sua empresa conosco!.
+        Desenvolvemos soluções inteligentes para desafios complexos. Eficiência, celeridade, precisão e performance. Você sempre um passo a frente.
         </p>
       </div>
       <div class="img">
-      <img src="/img/hero-bg.png" alt="login" class="imag-login">
+      <img src="/img/imag-home.png" alt="login" class="imag-login">
       </div>
     </section>
   </body>
