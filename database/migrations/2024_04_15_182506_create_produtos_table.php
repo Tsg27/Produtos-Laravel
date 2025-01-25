@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome',60);
             $table->string('categoria',60);
             $table->string('validade',7);
-            $table->double('valor', 8, 2);
+            $table->double('valor', 10, 2);
             $table->timestamps();
         });
     }

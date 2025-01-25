@@ -47,7 +47,7 @@
                                 <th>{{ $produto->nome }}</th>
                                 <th>{{ $produto->categoria }}</th>
                                 <th>{{ $produto->validade }}</th>
-                                <th>{{ $produto->valor }}</th>
+                                <td>{{ number_format($produto->valor, 2, ',', '.') }}</td>
                                 <th class="d-flex">
                                     {{-- -Button Editar- --}}
                                     <a href="{{ route('produtos-edit', ['id' => $produto->id]) }}" class="btn btn-primary me-2">
@@ -93,15 +93,23 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="categoria">Categoria:</label>
-                                        <input type="text" name="categoria" id="categoria" class="form-control" placeholder="Informe categoria" required>
+                                        <select name="categoria" id="categoria" class="form-control" required>
+                                            <option value="" disabled selected>Selecione uma categoria</option>
+                                            <option value="Alimentos">Alimentos</option>
+                                            <option value="Bebida">Bebida</option>
+                                            <option value="Limpeza">Limpeza</option>
+                                            <option value="Higiene">Higiene</option>
+                                        </select>
                                     </div>
+
                                     <div class="form-group">
                                         <label for="validade">Validade:</label>
                                         <input type="text" name="validade" id="validade" class="form-control" maxlength="7" placeholder="mm/aaaa" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="valor">Valor:</label>
-                                        <input type="number" name="valor" id="valor" class="form-control" placeholder=" Informe valor" required>
+                                        <input type="text" name="valor" id="valor" class="form-control" placeholder="exemplo: 10,00"
+                                            pattern="^\d+(\,\d{1,2})?$" maxlength="6" required>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" id="submitCancelar" data-dismiss="modal">Cancelar</button>
