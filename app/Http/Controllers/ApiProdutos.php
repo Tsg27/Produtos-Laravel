@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 class ApiProdutos extends Controller
 {
 
+
     public function index() {
         return Api_produtos::all();
     }
 
-
+    
     public function update(Request $request) {
 
         // Busca o produto pelo ID
@@ -30,6 +31,25 @@ class ApiProdutos extends Controller
 
         // Retorna uma resposta de sucesso
         return response()->json(['message' => 'Produto atualizado com sucesso'], 200);
+    }
+
+
+    
+    public function destroy($id)
+    {
+        // Busca o produto pelo ID
+        $produto = Api_produtos::find($id);
+
+        if ($produto) {
+            // Deleta o produto
+            $produto->delete();
+
+           // Retorna uma resposta de sucesso
+        return response()->json(['message' => 'Item excluido com sucesso!'], 200);
+        }
+
+        // Caso o produto não seja encontrado
+        return response()->json(['message' => 'Erro ao excluir item'], 404);
     }
 
 
