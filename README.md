@@ -6,7 +6,16 @@
 
 ## Sobre o Projeto
 
-Este projeto foi criado com fins práticos para explorar e aprofundar o desenvolvimento utilizando o framework Laravel.
+![imag-login](https://github.com/user-attachments/assets/bcd3cb59-ac41-4cb6-90f5-ab5a27fa380d)
+
+##
+
+![imag-index](https://github.com/user-attachments/assets/878c14df-9759-4c14-aca8-c6e191174462)
+
+##
+
+![requisição HTTP-insomnia](https://github.com/user-attachments/assets/9c27350a-3d7b-40f9-92e8-da2f007dc12e)
+
 
 ### Funcionalidades
 
