@@ -35,22 +35,21 @@ class ApiProdutos extends Controller
 
 
     
-    public function destroy($id)
-    {
+    public function destroy($id) {
         // Busca o produto pelo ID
         $produto = Api_produtos::find($id);
-
-        if ($produto) {
-            // Deleta o produto
-            $produto->delete();
-
-           // Retorna uma resposta de sucesso
-        return response()->json(['message' => 'Item excluido com sucesso!'], 200);
+    
+        // Verifica se o produto existe
+        if (!$produto) {
+            return response()->json(['message' => 'Produto não encontrado'], 404);
         }
-
-        // Caso o produto não seja encontrado
-        return response()->json(['message' => 'Erro ao excluir item'], 404);
+    
+        // Exclui o produto
+        $produto->delete();
+    
+        return response()->json(['message' => 'Produto excluído com sucesso'], 200);
     }
+    
 
 
 
