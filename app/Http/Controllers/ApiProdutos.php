@@ -7,12 +7,17 @@ use Illuminate\Http\Request;
 class ApiProdutos extends Controller
 {
 
-
+    /**
+     * Exibir listagem de produtos.
+     */
     public function index() {
         return Api_produtos::all();
     }
 
     
+    /**
+     * Atualizar produto.
+     */
     public function update(Request $request) {
 
         // Busca o produto pelo ID
@@ -34,7 +39,9 @@ class ApiProdutos extends Controller
     }
 
 
-    
+    /**
+     * Deletar produto
+     */
     public function destroy($id) {
         // Busca o produto pelo ID
         $produto = Api_produtos::find($id);
