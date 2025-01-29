@@ -1,5 +1,5 @@
 ## Sobre o Projeto
-Projeto desenvolvido para fins de práticos para explorar e aprofundar o desenvolvimento utilizando o framework Laravel.
+Este projeto foi criado com fins práticos para explorar e aprofundar o desenvolvimento utilizando o framework Laravel. 
 
 <p align="center">
   <a href="https://laravel.com" target="_blank">
