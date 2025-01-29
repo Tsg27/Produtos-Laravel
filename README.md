@@ -16,3 +16,27 @@ Este projeto foi criado com fins práticos para explorar e aprofundar o desenvol
 ✅ Arquitetura bem estruturada seguindo boas práticas do Laravel  
 
 Este repositório é ideal para quem deseja aprender e praticar Laravel, além de servir como base para projetos mais avançados.  
+
+---
+
+## Tecnologia Utilizada no Projeto
+
+- **Framework**: Laravel (PHP)  
+- **Linguagem de Programação**: PHP  
+- **Banco de Dados**: MySQL  
+- **IDE Utilizada**: Visual Studio Code  
+- **Back-End**: Laravel
+
+---
+
+## Autor
+
+- [Tiago Soares da Conceição](https://www.linkedin.com/in/tsgo27/)
+
+
+---
+
+## Licença
+Copyright © 2023 School Library.
+
+Este projeto é licenciado [MIT](https://choosealicense.com/licenses/mit/)
