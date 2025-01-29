@@ -22,10 +22,10 @@ Este projeto foi criado com fins práticos para explorar e aprofundar o desenvol
 
 ### Funcionalidades
 
-- **✅ CRUD completo (Create, Read, Update, Delete),  incluindo um formulário de cadastro e edição.
-- **✅ Sistema de autenticação com login seguro
-- **✅ Integração com API para atualização e remoção de dados
-- **✅ Arquitetura bem estruturada seguindo boas práticas do Laravel  
+- ✅ CRUD completo (Create, Read, Update, Delete),  incluindo um formulário de cadastro e edição.
+- ✅ Sistema de autenticação com login seguro
+- ✅ Integração com API para atualização e remoção de dados
+- ✅ Arquitetura bem estruturada seguindo boas práticas do Laravel  
 
 Este repositório é ideal para quem deseja aprender e praticar Laravel, além de servir como base para projetos mais avançados.  
 
