@@ -37,6 +37,6 @@ Este repositório é ideal para quem deseja aprender e praticar Laravel, além d
 ---
 
 ## Licença
-Copyright © 2023 School Library.
+Copyright © 2025 TsgoWeb.
 
 Este projeto é licenciado [MIT](https://choosealicense.com/licenses/mit/)
